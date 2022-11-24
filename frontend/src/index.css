@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-color: hsl(212, 100%, 40%);
+  --font-family: 'Inter', sans-serif;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  background-color: rgb(58, 57, 57);
+  padding: .75em 0;
+}
+
+.nav ul {
+  display: flex;
+
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.nav a {
+  color: #fff;
+  padding: .5em;
+  font-size: .75rem;
+}
+
+.nav a:hover {
+  opacity: .7;
+}
+
+.nav a.active {
+  border-bottom: 1px solid #fff;
+}
+
+.nav a:hover.active {
+  opacity: 1;
+}
+
+.container {
+  width: 95%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.products-container {
+  margin: 0 auto;
+}
+
+
+.table {
+  margin: 1em auto;
+  margin-top: .5em;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tr {
+  display: flex;
+  /* width: 100%; */
+}
+
+.table .td,
+.table .th {
+  width: 120px;
+  padding: .75em;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: .5rem;
+}
+
+.table input.td {
+  border: 1px solid #000;
+}
+
+.table .th {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.table .tbody .tr:nth-child(even) {
+  background-color: #d3d5d6;
+}
+
+.btn {
+  font-size: .7rem;
+  font-weight: 300;
+  padding: .25em .5em;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: .3rem;
+}
+
+.btn:hover {
+  opacity: .9;
+}
+
+.btn-add {
+  margin-top: .5em;
+  width: 100%;
+  /* background-color: hsl(200, 4%, 95%); */
+  background-color: #fff;
+  border: 1px solid var(--primary-color);
+  color: rgb(58, 57, 57);
+  font-size: 1rem;
+}
+
+.btn-add:hover {
+  background-color: hsl(200, 4%, 95%);
+}
+
+.btn-edit {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn-delete {
+  margin-left: .5em;
+  background-color: #fd2626;
+  color: #fff;
+}
+
+.btn-cancel {
+  background-color: #fff;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: calc(.25em - 1px)  calc(.5em - 1px);
+}
+
+.btn-save {
+  margin-left: .5em;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.btn-close {
+  margin-left: .5em;
+  background-color: #fd2626;
+  color: #fff;
+  margin-left: auto;
+}
+
+
+.form .btn {
+  padding: .5em .8em;
+}
+.form input {
+  border: 1px solid #333;
+  padding: .5em .8em;
+  margin-bottom: 1em;
+  font-size: .7rem;
+  border-radius: .3rem;
+}
+
+
+/*responsive*/
+
+@media (max-width: 500px) {
+  .table .thead {
+    display: none;
+  }
+
+  .table,
+  .table .tbody,
+  .table .tr,
+  .table .td {
+    display: block;
+    width: 100%;
+  }
+  .table .tr {
+    margin-bottom: .75em;
+  }
+  .table .td {
+    padding-left: 50%;
+    text-align: left;
+    text-align: center;
+    position: relative;
+  }
+
+  .table .td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: .75em;
+    font-size: .75rem;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .table .td,
+  .table .th {
+    width: 100%;
+  }
+}
+
