@@ -8,6 +8,7 @@ const productsRouter = require('./routes/productsRouter.js');
 const workshopsRouter = require('./routes/workshopsRouter.js');
 const ordersRouter = require('./routes/ordersRouter.js');
 const contractsRouter = require('./routes/contractsRouter.js');
+const homeRouter = require('./routes/homeRouter.js');
 
 const { errorHandler } = require('./middlewares/errorMiddleware.js')
 app.use(errorHandler);
@@ -18,6 +19,7 @@ app.use("/api/products", productsRouter);
 app.use("/api/workshops", workshopsRouter);
 app.use("/api/orders", ordersRouter);
 app.use("/api/contracts", contractsRouter);
+app.use("/api", homeRouter);
 
 const pool = new sql.ConnectionPool(dbConfig);
 

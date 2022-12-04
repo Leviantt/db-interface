@@ -94,7 +94,7 @@ function Orders() {
   if(isLoading) return <div className="loader">Loading...</div>;
 
   return (
-    <div className='products-container'>
+    <div className='table-container'>
       <Modal
         isOpen={modalIsOpen}
         // onAfterOpen={afterOpenModal}
