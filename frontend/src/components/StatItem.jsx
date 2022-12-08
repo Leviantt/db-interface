@@ -1,7 +1,7 @@
 import React from 'react'
 
 function StatItem({ workshop }) {
-    console.log(workshop);
+    // console.log(workshop);
     const {WorkshopName, ProductName, ContractId, ProductsCount, SingleProductCost, TotalPrice} = workshop[0];
     {/* {"WorkshopName":"Марка Принт","ProductName":"Журнал \"Vogue\"","ContractId":1,"ProductsCount":1000,"SingleProductCost":501,"TotalPrice":501000} */}
   return (

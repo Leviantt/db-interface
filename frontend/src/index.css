@@ -64,6 +64,16 @@ ul {
   display: flex;
 }
 
+.select-year-group {
+  margin: .5em;
+  margin-left: 0;
+}
+
+.select-year-group label {
+  margin-right: .5em;
+}
+
+
 .table-container {
   margin: 0 auto;
 }
