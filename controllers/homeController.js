@@ -3,10 +3,7 @@ const sql = require("mssql");
 
 // '01-01-2023', '01-01-2024'
 async function getStatistics(req, res) {
-  console.log(req.query);
   const { startDate, endDate } = req.query;
-  console.log(startDate);
-  console.log(endDate);
   const response = await req.db
     .request()
     .input("StartDate", sql.Date, startDate)

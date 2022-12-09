@@ -19,8 +19,6 @@ async function addContract(req, res) {
   const { registrationDate, executionDate, customerName, customerAddress } =
     req.body;
 
-  console.log(req.body);
-
   const response = await req.db
     .request()
     .input("RegistrationDate", sql.Date, registrationDate)
@@ -33,7 +31,6 @@ async function addContract(req, res) {
 
 async function updateContract(req, res) {
   const id = +req.params.id;
-  console.log(req.body);
   const { registrationDate, executionDate, customerName, customerAddress } =
     req.body;
 
@@ -50,7 +47,6 @@ async function updateContract(req, res) {
 
 async function deleteContract(req, res) {
   const id = +req.params.id;
-  console.log(`backend deleteContract: id = ${id}`)
   const response = await req.db
     .request()
     .input("id", sql.Int, id)

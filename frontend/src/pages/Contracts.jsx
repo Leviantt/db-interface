@@ -78,8 +78,6 @@ function Contracts() {
 
 
 
-// console.log(data);
-
   function handleSubmit(e) {
     e.preventDefault();
 

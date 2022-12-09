@@ -16,8 +16,7 @@ function Home() {
   const { isLoading, data } = useQuery({ queryKey: ['statistics', currentYear], queryFn: () => getStatistics(currentYear) })
 
   if(isLoading) return "Loading...";
-  console.log('data');
-  console.log(data);
+
   const statItems = [];
   for(let key in data) {
     statItems.push(<StatItem key={key} workshop={data[key]}/>)
@@ -25,7 +24,6 @@ function Home() {
 
   function handleSelectChange(e) {
     setCurrentYear(e.target.value);
-    console.log('handleSelectChange')
   }
 
   return (

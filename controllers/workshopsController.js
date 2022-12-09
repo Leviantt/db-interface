@@ -33,16 +33,10 @@ async function addWorkshop(req, res) {
 async function updateWorkshop(req, res) {
   const id = +req.params.id;
 
-  console.log(`req.body.phoneNumber = ${req.body.phoneNumber}`)
-
   const director = req.body.director;
   const phoneNumber = +req.body.phoneNumber;
   const workshopName = req.body.workshopName;
 
-  console.log(req.body);
-  console.log(`director = ${director}`)
-  console.log(`phoneNumber = ${phoneNumber}`)
-  console.log(`workshopName = ${workshopName}`)
 
   const response = await req.db
     .request()
@@ -51,7 +45,6 @@ async function updateWorkshop(req, res) {
     .input("PhoneNumber", sql.BigInt, phoneNumber)
     .input("WorkshopName", sql.NVarChar(40), workshopName)
     .execute("updateWorkshop");
-    console.log(`rowsAffect: ${response.rowsAffected[0]}`);
   res.json({ rowsAffected: response.rowsAffected[0] });
 }
 
